@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+    id 'application'
+    id 'org.beryx.jlink' version '2.24.4'
+}
+
+javafx {
+    version = "18.0.1"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+group 'com.kodilla'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+mainClassName = 'com.kodilla.game.Game'
+println getMainClassName()
+
+test {
+    useJUnitPlatform()
+}
+
+jlink {
+    launcher {
+        name = 'com.kodilla.game'
+    }
+}
