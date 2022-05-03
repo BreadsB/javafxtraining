@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 import java.io.IOException;
 
@@ -16,12 +17,17 @@ public class Game extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+
+        //  Creating FXMLLoader and loading mainScene.fxml
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/fxml/mainScene.fxml"));
         Parent root = loader.load();
-        Scene mainScene = new Scene(root);
-        primaryStage.setScene(mainScene);
 
+        //  Assigning mainScene.fxml as Parent to Scene
+        Scene mainScene = new Scene(root);
+
+        //  Assigning mainScene to Stage
+        primaryStage.setScene(mainScene);
         primaryStage.setTitle("First Scene");
         primaryStage.show();
     }
