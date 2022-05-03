@@ -35,6 +35,7 @@ public class MainSceneController {
         fxmlLoader.setLocation(getClass().getResource("/fxml/gameSettings.fxml"));
         Parent root = fxmlLoader.load();
         Scene settingsScene = new Scene(root);
+        settingsScene.getStylesheets().add(getClass().getResource("/css/gameSettings.css").toExternalForm());
 
         //  Setting scene to a Stage
         Stage window = (Stage) btnStart.getScene().getWindow();

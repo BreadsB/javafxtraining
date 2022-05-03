@@ -5,11 +5,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.Window;
-
 import java.io.IOException;
 
-public class Game extends Application {
+public class StartGame extends Application {
 
     public static void main(String[] args) {
         launch(args);
@@ -25,6 +23,7 @@ public class Game extends Application {
 
         //  Assigning mainScene.fxml as Parent to Scene
         Scene mainScene = new Scene(root);
+        mainScene.getStylesheets().add(getClass().getResource("/css/gameSettings.css").toExternalForm());
 
         //  Assigning mainScene to Stage
         primaryStage.setScene(mainScene);

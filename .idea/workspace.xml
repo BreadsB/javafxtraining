@@ -5,29 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37eca56d-e0e6-444f-a5c0-1909b72cc5a3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/css/gameSettings.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kodilla/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kodilla/game/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kodilla/game/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kodilla/game/GameSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kodilla/game/GameSettings.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kodilla/game/controllers/GameSettingsSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kodilla/game/controllers/GameSettingsSceneController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kodilla/game/controllers/MainSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kodilla/game/controllers/MainSceneController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/module-info.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/distributions/testfx-1.0-SNAPSHOT.tar" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/testfx-1.0-SNAPSHOT.tar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/distributions/testfx-1.0-SNAPSHOT.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/testfx-1.0-SNAPSHOT.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/testfx-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/testfx-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/css/gameSettings.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/fxml/gameSettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/fxml/gameSettings.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/fxml/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/fxml/mainScene.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/scripts/testfx" beforeDir="false" afterPath="$PROJECT_DIR$/build/scripts/testfx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/scripts/testfx.bat" beforeDir="false" afterPath="$PROJECT_DIR$/build/scripts/testfx.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/game/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/game/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/game/StartGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/game/GameSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/game/GameSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/game/controllers/GameSettingsSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/game/controllers/GameSettingsSceneController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/game/controllers/MainSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/game/controllers/MainSceneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/css/gameSettings.scss" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/gameSettings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/gameSettings.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/mainScene.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/mainScene.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +94,7 @@
         <option value="FxmlFile" />
         <option value="SCSS File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -112,7 +123,7 @@
     "last_opened_file_path": "C:/Program Files/Java/javafx-sdk-18.0.1/lib",
     "list.type.of.created.stylesheet": "SCSS",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.51724136",
     "settings.editor.selected.configurable": "advanced.settings"
@@ -236,7 +247,8 @@
       <updated>1651567689576</updated>
       <workItem from="1651567692992" duration="3152000" />
       <workItem from="1651574790259" duration="6845000" />
-      <workItem from="1651582508642" duration="5814000" />
+      <workItem from="1651582508642" duration="7172000" />
+      <workItem from="1651609700096" duration="6330000" />
     </task>
     <servers />
   </component>
