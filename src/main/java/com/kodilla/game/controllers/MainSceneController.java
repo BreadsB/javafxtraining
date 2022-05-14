@@ -6,7 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -30,9 +29,9 @@ public class MainSceneController {
     // ALSO YOU NEED TO WRITE METHOD IN INPUT WINDOW #handleStartButton
     public void handleStartButton() throws Exception {
 
-        //  Creating new FXMLLoader object and assigning gameSettings.fxml scene
+        //  Creating new FXMLLoader object and assigning gameSettingsScene.fxml scene
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/fxml/gameSettings.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("/fxml/gameSettingsScene.fxml"));
         Parent root = fxmlLoader.load();
         Scene settingsScene = new Scene(root);
         settingsScene.getStylesheets().add(getClass().getResource("/css/gameSettings.css").toExternalForm());

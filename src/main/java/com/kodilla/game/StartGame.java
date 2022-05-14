@@ -9,6 +9,8 @@ import java.io.IOException;
 
 public class StartGame extends Application {
 
+    public static Stage mainView;
+
     public static void main(String[] args) {
         launch(args);
     }
@@ -28,6 +30,7 @@ public class StartGame extends Application {
         //  Assigning mainScene to Stage
         primaryStage.setScene(mainScene);
         primaryStage.setTitle("First Scene");
+        mainView = primaryStage;
         primaryStage.show();
     }
 }

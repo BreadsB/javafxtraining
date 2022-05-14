@@ -1,0 +1,9 @@
+.root {
+    /*-fx-background-image: url("../images/tictactoe-scene.jpg");*/
+    /*-fx-background-size: 600px 400px;*/
+    -fx-background-color: white;
+}
+
+.grid {
+    -fx-background-color: black;
+}
