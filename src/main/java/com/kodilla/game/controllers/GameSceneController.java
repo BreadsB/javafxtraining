@@ -47,6 +47,9 @@ public class GameSceneController {
     void initialize() {
         gamesGrid.setGridLinesVisible(true);
         // while empty > 0 --> eventListener on all enabled nodes in GridPane
+/*        gamesGrid.getChildren().stream()
+                .filter(node -> node instanceof ImageView)
+                .forEach(System.out::println);*/
     }
 
     public static String checkImage(ImageView object, Image checkingImage) {
@@ -131,12 +134,16 @@ public class GameSceneController {
     }
 
     public ImageView opponentMove() {
-        List<ImageView> listOfEmpty = new ArrayList<>();
-        listOfEmpty = Collections.singletonList((ImageView) gamesGrid.getChildren().stream()
+        List<ImageView> listOfEmpty;
+        listOfEmpty = gamesGrid.getChildren().stream()
+                .filter(node -> node instanceof ImageView)
                 .filter(node -> !node.isDisabled())
-                .collect(Collectors.toList()));
+                .map(node -> (ImageView) node)
+                .collect(Collectors.toList());
         Random rand = new Random();
-        return listOfEmpty.get(rand.nextInt(listOfEmpty.size()));
+        ImageView result = listOfEmpty.get(rand.nextInt(listOfEmpty.size()));
+        System.out.println(result);
+        return result;
     }
 
     public void addMark(MouseEvent mouseEvent) {
@@ -154,12 +161,11 @@ public class GameSceneController {
                         System.exit(0);
                     }
                 }
-                playersTurn = false;
-            } else {
-                clicked.setImage(crossImage);
-                clicked.setDisable(true);
-                String score = checkWinner(playersTurn);
 
+                playersTurn = false;
+                ImageView randomImgView = opponentMove();
+                randomImgView.setImage(crossImage);
+                randomImgView.setDisable(true);
 
                 if (Objects.equals(checkWinner(playersTurn), "win")) {
                     a.setContentText("Cross Winner!");

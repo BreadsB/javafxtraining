@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.kodilla.game.controllers.GameSettingsSceneControllerTestSuite" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-05-14T12:23:00" hostname="DESKTOP-GEDT7EE" time="0.003">
+<testsuite name="com.kodilla.game.controllers.GameSettingsSceneControllerTestSuite" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-05-14T12:49:41" hostname="DESKTOP-GEDT7EE" time="0.002">
   <properties/>
-  <testcase name="testNoShapeCode()" classname="com.kodilla.game.controllers.GameSettingsSceneControllerTestSuite" time="0.0"/>
+  <testcase name="testNoShapeCode()" classname="com.kodilla.game.controllers.GameSettingsSceneControllerTestSuite" time="0.001"/>
   <testcase name="testNoName()" classname="com.kodilla.game.controllers.GameSettingsSceneControllerTestSuite" time="0.0"/>
-  <testcase name="testButtonBegin()" classname="com.kodilla.game.controllers.GameSettingsSceneControllerTestSuite" time="0.001"/>
+  <testcase name="testButtonBegin()" classname="com.kodilla.game.controllers.GameSettingsSceneControllerTestSuite" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
