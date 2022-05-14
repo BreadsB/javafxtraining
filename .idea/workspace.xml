@@ -13,17 +13,6 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/kodilla/game/controllers/GameSceneController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/kodilla/game/controllers/GameSceneController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/testfx-1.0-SNAPSHOT.tar" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/testfx-1.0-SNAPSHOT.tar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/distributions/testfx-1.0-SNAPSHOT.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/testfx-1.0-SNAPSHOT.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/testfx-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/testfx-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.kodilla.game.StartGameTestSuite.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.kodilla.game.StartGameTestSuite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.kodilla.game.controllers.GameSettingsSceneControllerTestSuite.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.kodilla.game.controllers.GameSettingsSceneControllerTestSuite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.kodilla.game.controllers.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.kodilla.game.controllers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.kodilla.game.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.kodilla.game.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.kodilla.game.StartGameTestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.kodilla.game.StartGameTestSuite.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.kodilla.game.controllers.GameSettingsSceneControllerTestSuite.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.kodilla.game.controllers.GameSettingsSceneControllerTestSuite.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kodilla/game/controllers/GameSceneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kodilla/game/controllers/GameSceneController.java" afterDir="false" />
     </list>
@@ -264,7 +253,7 @@
       <workItem from="1651989417614" duration="8443000" />
       <workItem from="1652044052274" duration="81000" />
       <workItem from="1652513505036" duration="2468000" />
-      <workItem from="1652529015824" duration="5554000" />
+      <workItem from="1652529015824" duration="6123000" />
     </task>
     <servers />
   </component>

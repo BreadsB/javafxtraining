@@ -39,6 +39,7 @@ public class GameSceneController {
     Image crossImage = new Image(getClass().getResource("/images/cross_32px.png").toExternalForm());
 
     boolean playersTurn = true;
+    int moveCount;
     static String[] winnersStrike = new String[] {"yes", "yes", "yes"};
 
     Alert a = new Alert(Alert.AlertType.CONFIRMATION);
@@ -50,6 +51,25 @@ public class GameSceneController {
 /*        gamesGrid.getChildren().stream()
                 .filter(node -> node instanceof ImageView)
                 .forEach(System.out::println);*/
+    }
+
+    public void countMovementLeft() {
+        Stream<Node> listImageView = gamesGrid.getChildren().stream()
+                .filter(node -> node instanceof ImageView);
+
+        moveCount = (int) listImageView
+                .filter(node -> !node.isDisabled())
+                .count();
+
+        if (moveCount==0) {
+
+            a.setContentText("Game is DRAWN!");
+            Optional<ButtonType> result = a.showAndWait();
+            if (result.get() == ButtonType.OK) {
+                Platform.exit();
+                System.exit(0);
+            }
+        }
     }
 
     public static String checkImage(ImageView object, Image checkingImage) {
@@ -161,8 +181,9 @@ public class GameSceneController {
                         System.exit(0);
                     }
                 }
-
+                countMovementLeft();
                 playersTurn = false;
+
                 ImageView randomImgView = opponentMove();
                 randomImgView.setImage(crossImage);
                 randomImgView.setDisable(true);
@@ -175,28 +196,12 @@ public class GameSceneController {
                         System.exit(0);
                     }
                 }
+                countMovementLeft();
                 playersTurn = true;
             }
         }
 
-        Stream<Node> listImageView = gamesGrid.getChildren().stream()
-                .filter(node -> node instanceof ImageView);
-
-        int count = (int) listImageView
-                .filter(node -> !node.isDisabled())
-                .count();
-
-        System.out.println("Count: " + count);
-
-        if (count==0) {
-
-            a.setContentText("Game is DRAWN!");
-            Optional<ButtonType> result = a.showAndWait();
-            if (result.get() == ButtonType.OK) {
-                Platform.exit();
-                System.exit(0);
-            }
-        }
+        System.out.println("Count: " + moveCount);
     }
 
 
