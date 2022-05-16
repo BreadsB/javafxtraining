@@ -2,7 +2,6 @@ plugins {
     id 'java'
     id 'org.openjfx.javafxplugin' version '0.0.10'
     id 'application'
-//    id 'org.beryx.jlink' version '2.24.4'
 }
 
 javafx {
@@ -18,8 +17,15 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.testng:testng:7.5'
+    implementation 'junit:junit:4.13.1'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '4.5.1'
+    testImplementation group: 'org.testfx', name: 'testfx-core', version: '4.0.8-alpha'
+    implementation group: 'org.testfx', name: 'testfx-legacy', version: '4.0.8-alpha'
+    testImplementation group: 'org.testfx', name: 'testfx-junit5', version: '4.0.8-alpha'
+
 }
 
 mainClassName = 'com.kodilla.game.StartGame'
@@ -27,9 +33,3 @@ mainClassName = 'com.kodilla.game.StartGame'
 test {
     useJUnitPlatform()
 }
-
-//jlink {
-//    launcher {
-//        name = 'com.kodilla.game'
-//    }
-//}

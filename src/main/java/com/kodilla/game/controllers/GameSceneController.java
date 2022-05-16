@@ -9,7 +9,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -47,10 +46,7 @@ public class GameSceneController {
     @FXML
     void initialize() {
         gamesGrid.setGridLinesVisible(true);
-        // while empty > 0 --> eventListener on all enabled nodes in GridPane
-/*        gamesGrid.getChildren().stream()
-                .filter(node -> node instanceof ImageView)
-                .forEach(System.out::println);*/
+
     }
 
     public void countMovementLeft() {
@@ -63,7 +59,7 @@ public class GameSceneController {
 
         if (moveCount==0) {
 
-            a.setContentText("Game is DRAWN!");
+            a.setContentText("Tie!");
             Optional<ButtonType> result = a.showAndWait();
             if (result.get() == ButtonType.OK) {
                 Platform.exit();
@@ -161,9 +157,7 @@ public class GameSceneController {
                 .map(node -> (ImageView) node)
                 .collect(Collectors.toList());
         Random rand = new Random();
-        ImageView result = listOfEmpty.get(rand.nextInt(listOfEmpty.size()));
-        System.out.println(result);
-        return result;
+        return listOfEmpty.get(rand.nextInt(listOfEmpty.size()));
     }
 
     public void addMark(MouseEvent mouseEvent) {
