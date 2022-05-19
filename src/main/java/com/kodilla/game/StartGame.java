@@ -31,6 +31,6 @@ public class StartGame extends Application {
         primaryStage.setScene(mainScene);
         primaryStage.setTitle("First Scene");
         mainView = primaryStage;
-        primaryStage.show();
+        mainView.show();
     }
 }

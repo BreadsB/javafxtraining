@@ -1,10 +1,14 @@
 package com.kodilla.game.controllers;
 
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 import com.kodilla.game.Game;
+import com.kodilla.game.Player;
 import com.kodilla.game.Statistics;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -13,12 +17,9 @@ import javafx.stage.Stage;
 
 public class GameSettingsSceneController {
 
-    @FXML
-    private RadioButton radioButtonTriangle;
-    @FXML
-    private RadioButton radioButtonCircle;
-    @FXML
-    private RadioButton radioButtonCross;
+    private final Image circleImage = new Image(String.valueOf(getClass().getResource(circleImagePath)), 100.0, 100.0, true, true);
+    private final Image triangleImage = new Image(String.valueOf(getClass().getResource(triangleImagePath)), 100.0, 100.0, true, true);
+    private final Image crossImage = new Image(String.valueOf(getClass().getResource(crossImagePath)), 100.0, 100.0, true, true);
     @FXML
     private Button buttonStartGame;
     @FXML
@@ -39,27 +40,44 @@ public class GameSettingsSceneController {
     @FXML
     void initialize() {
 
-    }
-
-    public void getPlayerName() {
-        String playerNameTemporary = playerNameTextField.getText();
-        if (playerNameTemporary == null || playerNameTemporary.isBlank()) {
-            System.out.println("no name");
-        } else { Statistics.setPlayerName(playerNameTemporary); }
-    }
-    public void getChoosenShape() {
-        Image circleImage = new Image(circleImagePath, 100.0, 100.0, true, true);
-        Image triangleImage = new Image(triangleImagePath, 100.0, 100.0, true, true);
-        Image crossImage = new Image(crossImagePath, 100.0, 100.0, true, true);
-
         toggleGroupShape.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
-            if (radioButtonCircle.isSelected()) { imageShape.setImage(circleImage); }
-            if (radioButtonTriangle.isSelected()) { imageShape.setImage(triangleImage); }
-            if (radioButtonCross.isSelected()) { imageShape.setImage(crossImage); }
+            RadioButton rb = (RadioButton) toggleGroupShape.getSelectedToggle();
+
+            if (rb!=null) {
+                if (rb.getText().equals("Circle")) {
+                    imageShape.setImage(circleImage);
+                    System.out.println(circleImage);
+
+                } else if (rb.getText().equals("Cross")) {
+                    imageShape.setImage(crossImage);
+                } else if (rb.getText().equals("Triangle")) {
+                    imageShape.setImage(triangleImage);
+                } else {
+                    System.out.println("error");
+                }
+            } else {
+                System.out.println("Error");
+            }
         });
     }
     public void handleStartGameButton() throws Exception {
-        Game game = new Game();
-        game.start(new Stage());
+        String playerNameTemporary = playerNameTextField.getText();
+        if (playerNameTemporary==null) {
+            System.out.println("playerName null");
+        } else if (playerNameTemporary.isBlank()) {
+            System.out.println("playerName blank");
+        } else if (toggleGroupShape.getSelectedToggle()==null) {
+            System.out.println("ToogleGroup not assigned");
+        } else {
+            Statistics.setPlayerName(playerNameTemporary);
+
+            Player player = new Player(playerNameTemporary, imageShape.getImage());
+            System.out.println("GameSettings: " + player.getPlayerName());
+            System.out.println("GameSettings: " + player.getImage());
+
+            Game game = new Game();
+//            game.getPlayer(player);
+            game.start(new Stage());
+        }
     }
 }

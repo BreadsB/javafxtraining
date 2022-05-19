@@ -1,6 +1,0 @@
-.root {
-  -fx-background-color: linear-gradient(to right, rgba(0,138,255,1) 0%, rgba(0,185,255,1) 39%, rgba(0,82,255,1) 100%);
-}
-.button {
-  -fx-start-margin: 5px;
-}

@@ -1,8 +1,8 @@
 package com.kodilla.game.controllers;
 
 import javafx.application.Platform;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.image.Image;
@@ -12,197 +12,134 @@ import javafx.scene.layout.GridPane;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-public class GameSceneController {
 
+public class GameSceneController {
+    List<ImageView> listFreeFields;
+    private final Random random = new Random();
     @FXML
-    public GridPane gamesGrid;
+    private GridPane gamesGrid;
     @FXML
     private ImageView c0r0;
     @FXML
-    public ImageView c1r0;
+    private ImageView c0r1;
     @FXML
-    public ImageView c2r0;
+    private ImageView c0r2;
     @FXML
-    public ImageView c0r1;
+    private ImageView c1r0;
     @FXML
-    public ImageView c1r1;
+    private ImageView c1r1;
     @FXML
-    public ImageView c2r1;
+    private ImageView c1r2;
     @FXML
-    public ImageView c0r2;
+    private ImageView c2r0;
     @FXML
-    public ImageView c1r2;
+    private ImageView c2r1;
     @FXML
-    public ImageView c2r2;
-    Image circleImage = new Image(getClass().getResource("/images/circle_32px.png").toExternalForm());
-    Image crossImage = new Image(getClass().getResource("/images/cross_32px.png").toExternalForm());
+    private ImageView c2r2;
 
-    boolean playersTurn = true;
-    int moveCount;
-    static String[] winnersStrike = new String[] {"yes", "yes", "yes"};
+    private final Image circleImage = new Image(String.valueOf(getClass().getResource("/images/circle_32px.png")));
+    private final Image crossImage = new Image(String.valueOf(getClass().getResource("/images/cross_32px.png")));
 
     Alert a = new Alert(Alert.AlertType.CONFIRMATION);
-
-    @FXML
-    void initialize() {
-        gamesGrid.setGridLinesVisible(true);
-        // while empty > 0 --> eventListener on all enabled nodes in GridPane
-/*        gamesGrid.getChildren().stream()
-                .filter(node -> node instanceof ImageView)
-                .forEach(System.out::println);*/
+    public GameSceneController() {
     }
 
-    public void countMovementLeft() {
-        Stream<Node> listImageView = gamesGrid.getChildren().stream()
-                .filter(node -> node instanceof ImageView);
-
-        moveCount = (int) listImageView
-                .filter(node -> !node.isDisabled())
-                .count();
-
-        if (moveCount==0) {
-
-            a.setContentText("Game is DRAWN!");
-            Optional<ButtonType> result = a.showAndWait();
-            if (result.get() == ButtonType.OK) {
-                Platform.exit();
-                System.exit(0);
-            }
-        }
-    }
-
-    public static String checkImage(ImageView object, Image checkingImage) {
-        if (object.getImage()==checkingImage) {
-            return "yes";
+    boolean checkImage(ImageView inputImageView, Image image) {
+        if (Objects.equals(inputImageView.getImage(), image)) {
+            return true;
         } else {
-            return "no";
+            return false;
         }
     }
+    boolean checkWinner(Image image) {
 
-    public String checkWinner(boolean playersTurn) {
-        if (playersTurn) {
-            return checkStrike(circleImage);
-        } else {
-            return checkStrike(crossImage);
-        }
-    }
-
-    String checkStrike(Image image) {
-
-        String[] strike = null;
-        String first;
-        String second;
-        String third;
-
-        for (int i = 0; i < 8; i++) {
-            switch (i) {
+        boolean[] strike = null;
+        boolean[] winnerStrike = new boolean[]{true, true, true};
+        for (int i=0; i<8; i++) {
+            switch(i) {
                 case 0:
-                    first = checkImage(c0r0, image);
-                    second = checkImage(c0r1, image);
-                    third = checkImage(c0r2, image);
-                    strike = new String[]{first, second, third};
+                    strike = new boolean[]{checkImage(c0r0, image), checkImage(c0r1, image), checkImage(c0r2, image)};
                     break;
                 case 1:
-                    first = checkImage(c1r0, image);
-                    second = checkImage(c1r1, image);
-                    third = checkImage(c1r2, image);
-                    strike = new String[]{first, second, third};
+                    strike = new boolean[]{checkImage(c1r0, image), checkImage(c1r1, image), checkImage(c1r2, image)};
                     break;
                 case 2:
-                    first = checkImage(c2r0, image);
-                    second = checkImage(c2r1, image);
-                    third = checkImage(c2r2, image);
-                    strike = new String[]{first, second, third};
+                    strike = new boolean[]{checkImage(c2r0, image), checkImage(c2r1, image), checkImage(c2r2, image)};
                     break;
                 case 3:
-                    first = checkImage(c0r0, image);
-                    second = checkImage(c1r0, image);
-                    third = checkImage(c2r0, image);
-                    strike = new String[]{first, second, third};
+                    strike = new boolean[]{checkImage(c0r0, image), checkImage(c1r0, image), checkImage(c2r0, image)};
                     break;
                 case 4:
-                    first = checkImage(c0r1, image);
-                    second = checkImage(c1r1, image);
-                    third = checkImage(c2r1, image);
-                    strike = new String[]{first, second, third};
+                    strike = new boolean[]{checkImage(c0r1, image), checkImage(c1r1, image), checkImage(c2r1, image)};
                     break;
                 case 5:
-                    first = checkImage(c0r2, image);
-                    second = checkImage(c1r2, image);
-                    third = checkImage(c2r2, image);
-                    strike = new String[]{first, second, third};
+                    strike = new boolean[]{checkImage(c0r2, image), checkImage(c1r2, image), checkImage(c2r2, image)};
                     break;
                 case 6:
-                    first = checkImage(c0r0, image);
-                    second = checkImage(c1r1, image);
-                    third = checkImage(c2r2, image);
-                    strike = new String[]{first, second, third};
+                    strike = new boolean[]{checkImage(c0r0, image), checkImage(c1r1, image), checkImage(c2r2, image)};
                     break;
                 case 7:
-                    first = checkImage(c2r0, image);
-                    second = checkImage(c1r1, image);
-                    third = checkImage(c0r2, image);
-                    strike = new String[]{first, second, third};
+                    strike = new boolean[]{checkImage(c0r2, image), checkImage(c1r1, image), checkImage(c2r0, image)};
                     break;
             }
-            if(Arrays.equals(strike, winnersStrike)) {
-                return "win";
+            if (Arrays.equals(strike, winnerStrike)) {
+                return true;
             }
         }
-        return null;
+        return false;
     }
-
-    public ImageView opponentMove() {
-        List<ImageView> listOfEmpty;
-        listOfEmpty = gamesGrid.getChildren().stream()
+    public List<ImageView> getListOfEmptyFields() {
+        return gamesGrid.getChildren().stream()
                 .filter(node -> node instanceof ImageView)
-                .filter(node -> !node.isDisabled())
                 .map(node -> (ImageView) node)
+                .filter(node -> node.getImage()==null)
                 .collect(Collectors.toList());
-        Random rand = new Random();
-        ImageView result = listOfEmpty.get(rand.nextInt(listOfEmpty.size()));
-        System.out.println(result);
-        return result;
     }
 
-    public void addMark(MouseEvent mouseEvent) {
-        ImageView clicked = (ImageView) mouseEvent.getSource();
+    @FXML
+    private void initialize() {
+        gamesGrid.setGridLinesVisible(true);
+//        boolean playerTurn = random.nextBoolean();
+        boolean playerTurn = true;
+        int countMovements = 0;
+        boolean win;
 
-        if (clicked.getImage() == null) {
-            if (playersTurn) {
-                clicked.setImage(circleImage);
-                clicked.setDisable(true);
-                if (Objects.equals(checkWinner(playersTurn), "win")) {
-                    a.setContentText("Circle Winner!");
-                    Optional<ButtonType> result = a.showAndWait();
-                    if (result.get() == ButtonType.OK) {
-                        Platform.exit();
-                        System.exit(0);
+        if (playerTurn) {
+            gamesGrid.getChildren().forEach(node -> {
+                node.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        ImageView tmp = (ImageView) event.getPickResult().getIntersectedNode();
+                        tmp.setImage(circleImage);
+                        tmp.setDisable(true);
                     }
+                });
+            });
+            win = checkWinner(circleImage);
+            if (win) {
+                a.setContentText("Circle won!");
+                Optional<ButtonType> endButton = a.showAndWait();
+                if(endButton.get() == ButtonType.OK) {
+                    Platform.exit();
+                    System.exit(0);
                 }
-                countMovementLeft();
-                playersTurn = false;
-
-                ImageView randomImgView = opponentMove();
-                randomImgView.setImage(crossImage);
-                randomImgView.setDisable(true);
-
-                if (Objects.equals(checkWinner(playersTurn), "win")) {
-                    a.setContentText("Cross Winner!");
-                    Optional<ButtonType> result = a.showAndWait();
-                    if (result.get() == ButtonType.OK) {
-                        Platform.exit();
-                        System.exit(0);
-                    }
-                }
-                countMovementLeft();
-                playersTurn = true;
             }
+            playerTurn = false;
+        } else {
+            listFreeFields = getListOfEmptyFields();
+            ImageView randomEmptyField = listFreeFields.get(random.nextInt(listFreeFields.size()));
+            randomEmptyField.setImage(crossImage);
+            randomEmptyField.setDisable(true);
+            win = checkWinner(crossImage);
+            if (win) {
+                a.setContentText("Cross won!");
+                Optional<ButtonType> endButton = a.showAndWait();
+                if(endButton.get() == ButtonType.OK) {
+                    Platform.exit();
+                    System.exit(0);
+                }
+            }
+            playerTurn = true;
         }
-
-        System.out.println("Count: " + moveCount);
     }
-
-
 }
