@@ -72,11 +72,10 @@ public class GameSettingsSceneController {
             Statistics.setPlayerName(playerNameTemporary);
 
             Player player = new Player(playerNameTemporary, imageShape.getImage());
-            System.out.println("GameSettings: " + player.getPlayerName());
-            System.out.println("GameSettings: " + player.getImage());
+            System.out.println(player.getPlayerName());
+            System.out.println(player.getImage());
 
             Game game = new Game();
-//            game.getPlayer(player);
             game.start(new Stage());
         }
     }

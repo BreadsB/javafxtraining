@@ -5,8 +5,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.util.Objects;
-
 public class Game extends Application {
 
     public static void main(String[] args) {
@@ -14,11 +12,19 @@ public class Game extends Application {
     }
     @Override
     public void start(Stage primaryStage) throws Exception {
-
+        System.out.println("Hello world");
         Statistics.fxmlLoader.setLocation(getClass().getResource("/fxml/gameScene.fxml"));
+
+
+//        Parent root = new GridPane();
+        try {
             Parent root = Statistics.fxmlLoader.load();
             Scene gameScene = new Scene(root);
-            gameScene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/css/gameScene.css")).toExternalForm());
+            gameScene.getStylesheets().add(getClass().getResource("/css/gameScene.css").toExternalForm());
             StartGame.mainView.setScene(gameScene);
+        } catch (Exception exception) {
+            System.out.println("Error");
+        }
+
     }
 }
