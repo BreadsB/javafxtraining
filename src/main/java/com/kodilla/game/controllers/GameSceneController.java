@@ -10,12 +10,12 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class GameSceneController {
 
+    //Initializing variables
     @FXML
     public GridPane gamesGrid;
     @FXML
@@ -36,10 +36,7 @@ public class GameSceneController {
     public ImageView c1r2;
     @FXML
     public ImageView c2r2;
-    Image circleImage = new Image(String.valueOf(getClass().getResource("/images/circle_32px.png")));
     Image playerImage = Player.getImage();
-    Image crossImage = new Image(String.valueOf(getClass().getResource("/images/cross_32px.png")));
-
     Alert a = new Alert(Alert.AlertType.CONFIRMATION);
     Random random = new Random();
     Image aiImage = GameSettingsSceneController.aiImage;
@@ -49,6 +46,9 @@ public class GameSceneController {
     boolean endgame = false;
     List<ImageView> emptyListOfViews = null;
 
+    //Controller Methods
+
+    //AI move method
     void pcMove() {
         emptyListOfViews = listOfEmptyFields();
         ImageView randomImageView = emptyListOfViews.get(random.nextInt(listOfEmptyFields().size()));
@@ -59,19 +59,16 @@ public class GameSceneController {
             endgame = true;
             shutDown("PC wins");
         }
-        System.out.println(++moveCount);
+
+        if (++moveCount > 8) {
+            shutDown("Tie!");
+        }
     }
 
+    // Controller initialize method
     @FXML
     void initialize() {
-
         gamesGrid.setGridLinesVisible(true);
-        List<ImageView> gridElements = gamesGrid.getChildren().stream()
-                .filter(node -> node instanceof ImageView)
-                .map(node -> (ImageView) node)
-                .collect(Collectors.toList());
-
-        System.out.println(gridElements.size());
 
         if (playersTurn) {
             playerMoveClicked();
@@ -81,6 +78,7 @@ public class GameSceneController {
         }
     }
 
+    // Player move method
     void playerMoveClicked() {
         gamesGrid.getChildren().stream()
                 .filter(node -> node instanceof ImageView)
@@ -94,17 +92,21 @@ public class GameSceneController {
                             endgame = true;
                             shutDown("Player wins");
                         }
-                        moveCount++;
+                        if (++moveCount > 8) {
+                            shutDown("Tie!");
+                        }
                         pcMove();
                     }
                 }));
     }
 
+    // Check image from ImageView with Image method
     boolean checkImage(ImageView imageView, Image image) {
         Image imageViewImage = imageView.getImage();
         return Objects.equals(imageViewImage, image);
     }
 
+    // Method checks winner strike for given image
     boolean checkStrike(Image image) {
 
         boolean[] strike = null;
@@ -143,6 +145,7 @@ public class GameSceneController {
         return false;
     }
 
+    // Method checks how many empty fields left
     List<ImageView> listOfEmptyFields() {
         return gamesGrid.getChildren().stream()
                 .filter(node -> node instanceof ImageView)
@@ -151,9 +154,12 @@ public class GameSceneController {
                 .collect(Collectors.toList());
     }
 
+    // Method that shows alert with give message
+    // After clicking OK button, it exits app
     void shutDown(String text) {
         a.setContentText(text);
         Optional<ButtonType> button = a.showAndWait();
+
         if (button.isPresent()) {
             if (button.get()==ButtonType.OK) {
                 Platform.exit();

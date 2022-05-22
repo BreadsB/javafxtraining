@@ -18,15 +18,13 @@ public class GameSettingsSceneController {
     private final Image circleImage = new Image(String.valueOf(getClass().getResource(circleImagePath)), 100.0, 100.0, true, true);
     private final Image triangleImage = new Image(String.valueOf(getClass().getResource(triangleImagePath)), 100.0, 100.0, true, true);
     private final Image crossImage = new Image(String.valueOf(getClass().getResource(crossImagePath)), 100.0, 100.0, true, true);
-
     protected static Image aiImage;
     @FXML
-    TextField playerNameTextField;
+    private TextField playerNameTextField;
     @FXML
     private ImageView imageShape;
     @FXML
     private ToggleGroup toggleGroupShape;
-
     private final static String crossImagePath = "/images/cross_32px.png";
     private final static String circleImagePath = "/images/circle_32px.png";
     private final static String triangleImagePath = "/images/triangle_32px.png";
@@ -38,8 +36,8 @@ public class GameSettingsSceneController {
         List<Image> imageList = new ArrayList<>(List.of(circleImage, triangleImage, crossImage));
 
         toggleGroupShape.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
-            RadioButton rb = (RadioButton) toggleGroupShape.getSelectedToggle();
 
+            RadioButton rb = (RadioButton) toggleGroupShape.getSelectedToggle();
 
             if (rb!=null) {
                 if (rb.getText().equals("Circle")) {
@@ -60,7 +58,9 @@ public class GameSettingsSceneController {
         });
     }
     public void handleStartGameButton() throws Exception {
+
         String playerNameTemporary = playerNameTextField.getText();
+
         if (playerNameTemporary==null) {
             System.out.println("playerName null");
         } else if (playerNameTemporary.isBlank()) {
@@ -69,8 +69,6 @@ public class GameSettingsSceneController {
             System.out.println("ToogleGroup not assigned");
         } else {
             new Player(playerNameTemporary, imageShape.getImage());
-            System.out.println("Playername: " + Player.getPlayerName());
-            System.out.println("Player image: " + Player.getImage());
 
             try {
                 List<Image> imageList = new ArrayList<>(List.of(circleImage, crossImage, triangleImage));
