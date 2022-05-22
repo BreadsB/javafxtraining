@@ -2,28 +2,20 @@ package com.kodilla.game;
 
 import javafx.scene.image.Image;
 
-public class Player {
+public final class Player {
 
-    private String playerName;
-    private Image image;
-    public Player(String playerName, Image image) {
-        this.playerName = playerName;
-        this.image = image;
+    private static String playerName;
+    private static Image image;
+    public Player(final String playerName, final Image image) {
+        Player.playerName = playerName;
+        Player.image = image;
     }
 
-    public String getPlayerName() {
+    public static String getPlayerName() {
         return playerName;
     }
 
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
-    }
-
-    public Image getImage() {
+    public static Image getImage() {
         return image;
-    }
-
-    public void setImage(Image image) {
-        this.image = image;
     }
 }
